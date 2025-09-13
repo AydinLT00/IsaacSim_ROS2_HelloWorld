@@ -158,10 +158,7 @@ Here is a short clip demonstrating the Lidar data being published from Isaac Sim
 The following image shows the Action Graph in Isaac Sim responsible for streaming the Lidar data to ROS 2.
 <img width="1344" height="770" alt="Lidar Action Graph" src="https://github.com/user-attachments/assets/7397ee3c-c51a-4980-a29d-18364de22f42" />
 
-![Lidar Action Graph](./media/action_graph_lidar.png)
-
 ### Robot Setup in Isaac Sim
 This is the initial setup of the simple rover in the Isaac Sim scene, equipped with the Lidar and Camera sensors.
-<img width="1920" height="1080" alt="Robot in Isaac Sim" src="https://github.com/user-attachments/assets/8424455f-e449-42b0-80ab-d5d176e94600" />
 
-![Robot in Isaac Sim](./media/robot_setup.png)
+<img width="1920" height="928" alt="Robot in Isaac Sim" src="https://github.com/user-attachments/assets/ba857c8d-40fe-4b30-9b7b-66bbdd32cb6f" />
