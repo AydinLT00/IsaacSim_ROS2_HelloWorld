@@ -161,3 +161,6 @@ Here is a short clip demonstrating the Lidar data being published from Isaac Sim
 ```markdown
 ![Demonstration Video](./media/demo.gif)
 ```
+
+![Demonstration Video](https://github.com/AydinLT00/IsaacSim_ROS2_HelloWorld/releases/release_demo/demo.gif)
+
