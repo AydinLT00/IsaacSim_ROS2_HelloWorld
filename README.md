@@ -158,9 +158,7 @@ This is the initial setup of the simple rover in the Isaac Sim scene, equipped w
 ### Demonstration Video
 Here is a short clip demonstrating the Lidar data being published from Isaac Sim and visualized in RViz2 within WSL2.
 
-```markdown
-![Demonstration Video](./media/demo.gif)
-```
-
-![Demonstration Video](https://github.com/AydinLT00/IsaacSim_ROS2_HelloWorld/releases/release_demo/demo.gif)
+If the GIF above doesn't load, you can view or download it directly from the project's releases:
+<img width="1920" height="928" alt="Robot in Isaac Sim" src="https://github.com/AydinLT00/IsaacSim_ROS2_HelloWorld/releases/download/release_demo/demo.gif" />
+![Demonstration Video](https://github.com/AydinLT00/IsaacSim_ROS2_HelloWorld/releases/download/release_demo/demo.gif)
 
