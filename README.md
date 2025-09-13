@@ -145,3 +145,21 @@ $env:PATH = "$env:PATH;$env:isaac_sim_package_path\exts\isaacsim.ros2.bridge\jaz
 ## Result: Hello World!
 
 Following these steps, I successfully set up a simple rover in Isaac Sim equipped with a Lidar and a Camera. The simulation now correctly publishes Lidar data to ROS 2 Jazzy topics, which can be visualized and consumed by ROS nodes running in WSL2 (e.g., `rviz2`). This serves as a successful "Hello World" proof-of-concept for the entire setup.
+
+### Demonstration Video
+Here is a short clip demonstrating the Lidar data being published from Isaac Sim and visualized in RViz2 within WSL2.
+
+*(Drag and drop your video/GIF file into the GitHub editor here, or use the following Markdown syntax)*
+```markdown
+![Demonstration Video](./media/demo.gif)
+```
+
+### ROS 2 Lidar Stream Action Graph
+The following image shows the Action Graph in Isaac Sim responsible for streaming the Lidar data to ROS 2.
+
+![Lidar Action Graph](./media/action_graph_lidar.png)
+
+### Robot Setup in Isaac Sim
+This is the initial setup of the simple rover in the Isaac Sim scene, equipped with the Lidar and Camera sensors.
+
+![Robot in Isaac Sim](./media/robot_setup.png)
