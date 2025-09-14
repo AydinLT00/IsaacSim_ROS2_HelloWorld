@@ -162,3 +162,6 @@ If the GIF above doesn't load, you can view or download it directly from the pro
 
 ![Demonstration Video](https://github.com/AydinLT00/IsaacSim_ROS2_HelloWorld/releases/download/release_demo/demo.gif)
 
+
+
+> **Disclaimer:** This guide is heavily based on the official [NVIDIA Isaac Sim ROS 2 Bridge Documentation](https://docs.isaacsim.omniverse.nvidia.com/latest/installation/install_ros.html). This repository serves as a personal log of the steps I took and the specific workarounds I found while following their instructions. All credit for the core technology and original documentation goes to the NVIDIA team.
