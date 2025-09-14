@@ -178,3 +178,37 @@ If the GIF above doesn't load, you can view or download it directly from the pro
 
 
 > **Disclaimer:** This guide is heavily based on the official [NVIDIA Isaac Sim ROS 2 Bridge Documentation](https://docs.isaacsim.omniverse.nvidia.com/latest/installation/install_ros.html). This repository serves as a personal log of the steps I took and the specific workarounds I found while following their instructions. All credit for the core technology and original documentation goes to the NVIDIA team.
+
+
+
+## Phase 1: Robot State Publishing (Odometry & TF)
+
+After establishing basic manual control, the next critical step towards autonomy is enabling the robot to publish its state to the ROS 2 ecosystem. This involves broadcasting its position and orientation (Odometry) and the spatial relationship between all its components (TF).
+
+### What I Did
+
+1.  **Odometry Publishing:** I created a new Action Graph in Isaac Sim dedicated to calculating and publishing the robot's odometry. This graph sends messages to the `/odom` topic, providing real-time data about the robot's movement in its own starting frame.
+2.  **TF Tree Publishing:** The same Action Graph was configured to publish the robot's transform tree to the `/tf` topic. This is essential for ROS 2 to understand the physical layout of the robot (e.g., where the wheels and sensors are in relation to the main body).
+3.  **Lidar Frame Configuration:** The existing Lidar continues to publish its data to the `/scan_lidar` topic.
+
+### Key Challenge & Solution: Bridging Simulation and ROS Frames
+
+A common challenge when integrating simulators with ROS is ensuring the transform tree (TF) is complete and correct.
+
+*   **The Problem:** The Lidar sensor in Isaac Sim was physically attached to a frame called `front_sensor` on the robot model. However, the ROS 2 Bridge published the Lidar data with its own `frame_id` called `sim_lidar`. Without a link between `front_sensor` and `sim_lidar`, RViz2 had no way to know where the Lidar scans were coming from relative to the robot's body.
+
+*   **The Solution:** To fix this, I added a **`Raw Transform Tree`** node within the Odometry Action Graph. This node acts as a static transform publisher, explicitly defining the spatial relationship between the robot's `front_sensor` frame and the Lidar's `sim_lidar` frame. This crucial step completed the TF tree, allowing all data to be correctly visualized.
+
+### Result & Visualization
+
+With odometry and a complete TF tree being published, we can now visualize the robot's state properly in RViz2. By setting the "Fixed Frame" to `odom`, the world remains stationary while the robot model and its sensor data move together realistically.
+
+**RViz2 Visualization:**
+This video shows the robot being driven manually in Isaac Sim. In RViz2, you can see the `odom` frame fixed in place, the robot's TF frames moving correctly, and the Lidar scan data perfectly aligned with the robot's position.
+
+![Odometry and TF Visualization](./media/odom_tf_demo.gif)
+
+**Odometry & TF Action Graph:**
+This image shows the Isaac Sim Action Graph responsible for publishing both the `/odom` and `/tf` topics, including the `Raw Transform Tree` node used to fix the Lidar's frame issue.
+
+![Odometry Action Graph](./media/action_graph_odometry.png)
