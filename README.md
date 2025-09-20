@@ -206,7 +206,7 @@ With odometry and a complete TF tree being published, we can now visualize the r
 **RViz2 Visualization:**
 This video shows the robot being driven manually in Isaac Sim. In RViz2, you can see the `odom` frame fixed in place, the robot's TF frames moving correctly, and the Lidar scan data perfectly aligned with the robot's position.
 
-![Odometry and TF Visualization](https://github.com/AydinLT00/IsaacSim_ROS2_HelloWorld/releases/download/odom_fixed/odom_fixed.mp4)
+![Odometry and TF Visualization](https://github.com/AydinLT00/IsaacSim_ROS2_HelloWorld/releases/download/odom_fixed/odom_demo.gif)
 
 **Odometry & TF Action Graph:**
 This image shows the Isaac Sim Action Graph responsible for publishing both the `/odom` and `/tf` topics, including the `Raw Transform Tree` node used to fix the Lidar's frame issue.
